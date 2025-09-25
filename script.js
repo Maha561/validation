@@ -27,3 +27,13 @@ function ValidateUserName(name){
 
 
 };
+
+function validatePassword(pass) {
+    // Rule 1: at least 4 numbers
+    if ((pass.match(/\d/g) || []).length < 4) return false;
+
+    // Rule 2: at least 1 special symbol
+    if (!/[!@#$%^&*]/.test(pass)) return false;
+
+    return true; // all rules passed
+}
